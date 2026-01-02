@@ -69,8 +69,10 @@ python app.py
 Use the interface to test detection on images or videos.
 
 Note: Model weights (best.pt) and full dataset are not included. You can train the model using notebooks/yolov8_training.ipynb.
+```
+---
 
-🔮 Future Enhancements
+## 🔮 Future Enhancements
 Real-time detection with live camera feed
 
 GPS integration for defect mapping
