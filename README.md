@@ -1,42 +1,78 @@
 # Road Defect Detection 🚧
 
-An AI-powered system to detect road surface defects such as potholes and cracks using the **YOLOv8 object detection algorithm**. This project supports automated and accurate infrastructure monitoring from images and videos.
+An AI-powered system to detect road surface defects such as potholes and cracks using the **YOLOv8 object detection algorithm**.  
+This project automates road inspection by identifying defects in images and videos, helping infrastructure monitoring and smart city applications.
 
 ---
 
 ## 📌 Overview
-Road infrastructure maintenance is critical for safety and transportation efficiency. This project leverages **deep learning–based object detection** to automatically identify road defects, reducing the need for manual inspection and enabling scalable monitoring solutions.
+Manual road inspection is time-consuming and inefficient. This project leverages **YOLOv8** to detect road defects accurately and efficiently. Training and experimentation were carried out in **Google Colab**, and the project includes an interactive interface via `app.py` for testing detection on images and videos.
 
 ---
 
 ## ✨ Features
-- Detects multiple types of road defects with **bounding boxes and confidence scores**
-- **Fine-tuned YOLOv8 model** trained on a custom annotated dataset
-- Supports **image and video input** for defect detection
-- Includes **data preprocessing and augmentation** for improved accuracy
-- Modular pipeline for **annotation, training, evaluation, and inference**
+- Detects multiple types of road defects with **bounding boxes and confidence scores**  
+- **Fine-tuned YOLOv8 model** trained on a custom annotated dataset  
+- Supports both **image and video input** for detection  
+- **Data preprocessing and augmentation** to improve accuracy  
+- Modular pipeline for **annotation, training, evaluation, and inference**  
+- Interactive interface (`app.py`) for easy testing of images/videos  
 
 ---
 
 ## 🛠️ Technologies Used
 - Python  
-- PyTorch (YOLOv8 – Ultralytics)  
+- YOLOv8 (Ultralytics, PyTorch)  
 - OpenCV  
+- NumPy  
+- Matplotlib  
 - Roboflow / LabelImg (for annotation)  
-- Google Colab (for training and experimentation)
+- Google Colab (for model training)  
+- Streamlit / Flask (`app.py`) for interactive testing  
 
 ---
 
-## 📂 Project Workflow
-1. Dataset collection and annotation  
-2. Data preprocessing and augmentation  
-3. YOLOv8 model training in Google Colab  
-4. Model evaluation  
-5. Inference on images and videos  
+## 📂 Project Structure
+road-defect-detection/
+│── yolov8_training.ipynb # YOLOv8 training notebook
+│── src/
+│── app.py # Interactive interface
+│── samples/ # Optional sample images
+│── README.md
+│── requirements.txt
+│── .gitignore
 
 ---
 
-## 🚀 Usage
+## 🚀 How to Run
+1. Clone the repository:
 ```bash
-pip install ultralytics opencv-python
-yolo task=detect mode=predict model=best.pt source=path/to/input
+git clone https://github.com/your-username/road-defect-detection.git
+cd road-defect-detection
+Install dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+Run the interactive app:
+
+If using Streamlit:
+
+bash
+Copy code
+streamlit run app.py
+If using Flask:
+
+bash
+Copy code
+python app.py
+Use the interface to test detection on images or videos.
+
+Note: Model weights (best.pt) and full dataset are not included. You can train the model using notebooks/yolov8_training.ipynb.
+
+🔮 Future Enhancements
+Real-time detection with live camera feed
+
+GPS integration for defect mapping
+
+Deployment as a mobile/web application
